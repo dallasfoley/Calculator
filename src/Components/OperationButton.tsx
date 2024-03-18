@@ -2,7 +2,17 @@ const OperationButton = ({
   operation,
   onClick,
 }: {
-  operation: "+" | "-" | "*" | "/" | "=" | "exp" | "sqrt";
+  operation:
+    | "+"
+    | "-"
+    | "*"
+    | "/"
+    | "="
+    | "e"
+    | "sqrt"
+    | "log_10"
+    | "ln"
+    | React.ReactNode;
   onClick: () => void;
 }) => {
   return <button onClick={onClick}>{operation}</button>;

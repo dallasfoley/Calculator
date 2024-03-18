@@ -3,7 +3,14 @@ import "./App.css";
 import NumberButton from "./Components/NumberButton";
 import ClearButton from "./Components/ClearButton";
 import OperationButton from "./Components/OperationButton";
-import BlankButton from "./Components/BlankButton";
+import PlusIcon from "mdi-react/PlusIcon";
+import MinusIcon from "mdi-react/MinusIcon";
+import CloseIcon from "mdi-react/CloseIcon";
+import DivisionIcon from "mdi-react/DivisionIcon";
+import ExponentIcon from "mdi-react/ExponentIcon";
+import SquareRootIcon from "mdi-react/SquareRootIcon";
+import PiIcon from "mdi-react/PiIcon";
+// import { BlankButton } from "./Components/BlankButton";
 
 function App() {
   const [display, setDisplay] = useState(0);
@@ -39,55 +46,69 @@ function App() {
       <div className="App">
         <div className="display">{display}</div>
         <div>
-          {cache}
           <div className="calculator-grid">
-            <BlankButton />
-            <BlankButton />
             <OperationButton
-              operation="exp"
+              operation={<PiIcon />}
+              onClick={() => {
+                setCache([display, "pi"]);
+                setDisplay(Math.PI);
+              }}
+            />
+            <OperationButton
+              operation="e"
+              onClick={() => {
+                setCache([display, "e"]);
+                setDisplay(Math.E);
+              }}
+            />
+            <OperationButton
+              operation="log"
+              onClick={() => {
+                setCache([display, "log"]);
+                setDisplay(Math.log(display));
+              }}
+            />
+            <OperationButton
+              operation={<ExponentIcon />}
               onClick={() => {
                 setCache([display, "exp"]);
                 setDisplay(0);
               }}
             />
             <OperationButton
-              operation="sqrt"
+              operation={<SquareRootIcon />}
               onClick={() => {
                 setCache([]);
                 setDisplay(display ** 0.5);
               }}
             />
             <OperationButton
-              operation="+"
+              operation={<PlusIcon />}
               onClick={() => {
                 setCache([display, "+"]);
                 setDisplay(0);
               }}
             />
             <OperationButton
-              operation="-"
+              operation={<MinusIcon />}
               onClick={() => {
                 setCache([display, "-"]);
                 setDisplay(0);
               }}
             />
             <OperationButton
-              operation="*"
+              operation={<CloseIcon />}
               onClick={() => {
                 setCache([display, "*"]);
                 setDisplay(0);
               }}
             />
             <OperationButton
-              operation="/"
+              operation={<DivisionIcon />}
               onClick={() => {
                 setCache([display, "/"]);
                 setDisplay(0);
               }}
-            />
-            <NumberButton
-              value={6}
-              onClick={() => setDisplay(display * 10 + 6)}
             />
             <NumberButton
               value={7}
@@ -102,14 +123,6 @@ function App() {
               onClick={() => setDisplay(display * 10 + 9)}
             />
             <NumberButton
-              value={2}
-              onClick={() => setDisplay(display * 10 + 2)}
-            />
-            <NumberButton
-              value={3}
-              onClick={() => setDisplay(display * 10 + 3)}
-            />
-            <NumberButton
               value={4}
               onClick={() => setDisplay(display * 10 + 4)}
             />
@@ -118,13 +131,26 @@ function App() {
               onClick={() => setDisplay(display * 10 + 5)}
             />
             <NumberButton
-              value={0}
-              onClick={() => setDisplay(display * 10 + 0)}
+              value={6}
+              onClick={() => setDisplay(display * 10 + 6)}
             />
             <NumberButton
               value={1}
               onClick={() => setDisplay(display * 10 + 1)}
             />
+            <NumberButton
+              value={2}
+              onClick={() => setDisplay(display * 10 + 2)}
+            />
+            <NumberButton
+              value={3}
+              onClick={() => setDisplay(display * 10 + 3)}
+            />
+            <NumberButton
+              value={0}
+              onClick={() => setDisplay(display * 10 + 0)}
+            />
+
             <ClearButton
               onClick={() => {
                 setDisplay(0);
