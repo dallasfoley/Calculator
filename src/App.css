@@ -10,7 +10,7 @@
 
 .calculator-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4-column layout for buttons */
+  grid-template-columns: repeat(3, 1fr); /* 4-column layout for buttons */
   grid-gap: 15px; /* Increase space between buttons */
   width: auto; /* Adjust width as per content */
   padding: 30px;
@@ -48,7 +48,7 @@ button:active {
   padding: 20px;
   margin-bottom: 30px; /* More space above the buttons */
   border-radius: 15px;
-  width: calc(100% - 60px); /* Adjust based on padding */
+  width: 20%; /* Adjust based on padding */
   box-sizing: border-box;
   min-height: 60px; /* Ensure display has height even if empty */
   overflow: hidden; /* Keep content contained */

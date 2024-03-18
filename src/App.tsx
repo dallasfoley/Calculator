@@ -46,20 +46,26 @@ function App() {
       <div className="App">
         <div className="display">{display}</div>
         <div>
-          {cache}
           <div className="calculator-grid">
-            <OperationButton
-              operation="log"
-              onClick={() => {
-                setCache([display, "log"]);
-                setDisplay(Math.log(display));
-              }}
-            />
             <OperationButton
               operation={<PiIcon />}
               onClick={() => {
                 setCache([display, "pi"]);
                 setDisplay(Math.PI);
+              }}
+            />
+            <OperationButton
+              operation="e"
+              onClick={() => {
+                setCache([display, "e"]);
+                setDisplay(Math.E);
+              }}
+            />
+            <OperationButton
+              operation="log"
+              onClick={() => {
+                setCache([display, "log"]);
+                setDisplay(Math.log(display));
               }}
             />
             <OperationButton
@@ -105,10 +111,6 @@ function App() {
               }}
             />
             <NumberButton
-              value={6}
-              onClick={() => setDisplay(display * 10 + 6)}
-            />
-            <NumberButton
               value={7}
               onClick={() => setDisplay(display * 10 + 7)}
             />
@@ -121,14 +123,6 @@ function App() {
               onClick={() => setDisplay(display * 10 + 9)}
             />
             <NumberButton
-              value={2}
-              onClick={() => setDisplay(display * 10 + 2)}
-            />
-            <NumberButton
-              value={3}
-              onClick={() => setDisplay(display * 10 + 3)}
-            />
-            <NumberButton
               value={4}
               onClick={() => setDisplay(display * 10 + 4)}
             />
@@ -137,13 +131,26 @@ function App() {
               onClick={() => setDisplay(display * 10 + 5)}
             />
             <NumberButton
-              value={0}
-              onClick={() => setDisplay(display * 10 + 0)}
+              value={6}
+              onClick={() => setDisplay(display * 10 + 6)}
             />
             <NumberButton
               value={1}
               onClick={() => setDisplay(display * 10 + 1)}
             />
+            <NumberButton
+              value={2}
+              onClick={() => setDisplay(display * 10 + 2)}
+            />
+            <NumberButton
+              value={3}
+              onClick={() => setDisplay(display * 10 + 3)}
+            />
+            <NumberButton
+              value={0}
+              onClick={() => setDisplay(display * 10 + 0)}
+            />
+
             <ClearButton
               onClick={() => {
                 setDisplay(0);

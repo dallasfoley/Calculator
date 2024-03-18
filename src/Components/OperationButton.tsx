@@ -8,7 +8,7 @@ const OperationButton = ({
     | "*"
     | "/"
     | "="
-    | "exp"
+    | "e"
     | "sqrt"
     | "log_10"
     | "ln"
