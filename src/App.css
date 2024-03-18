@@ -2,18 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
   height: 100vh; /* Center the calculator vertically */
+  width: 100vw;
   flex-direction: column;
-  background-color: #f8f9fa; /* Light background for the app */
+  background-color: #2f3133; /* Light background for the app */
 }
-
+.calculator-container {
+  margin: 8px;
+}
 .calculator-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 4-column layout for buttons */
-  grid-gap: 15px; /* Increase space between buttons */
+  grid-gap: 12px; /* Increase space between buttons */
   width: auto; /* Adjust width as per content */
-  padding: 30px;
+  padding: 24px;
   background: #1c1c1c; /* Darker shade for contrast */
   border-radius: 20px; /* More pronounced rounded corners */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* Add some shadow for depth */
@@ -24,8 +26,8 @@ button {
   padding: 20px; /* More space inside buttons */
   border: none;
   border-radius: 10px; /* Slightly rounded corners for buttons */
-  background: #f4f4f4; /* Light background for buttons */
-  color: #333; /* Dark text for contrast */
+  background: #333; /* Light background for buttons */
+  color: #f4f4f4; /* Dark text for contrast */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   transition: background-color 0.2s, transform 0.1s; /* Smoother transitions */
 }
@@ -42,13 +44,13 @@ button:active {
 
 .display {
   color: #fff;
-  background: #2c2c2c; /* Slightly lighter than calculator for contrast */
+  background: #1c1c1c; /* Slightly lighter than calculator for contrast */
   font-size: 2.5rem; /* Larger font size for display */
   text-align: right;
   padding: 20px;
-  margin-bottom: 30px; /* More space above the buttons */
+  margin-bottom: 16px; /* More space above the buttons */
   border-radius: 15px;
-  width: 20%; /* Adjust based on padding */
+  width: 100%; /* Adjust based on padding */
   box-sizing: border-box;
   min-height: 60px; /* Ensure display has height even if empty */
   overflow: hidden; /* Keep content contained */

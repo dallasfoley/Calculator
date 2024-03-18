@@ -44,120 +44,122 @@ function App() {
   return (
     <>
       <div className="App">
-        <div className="display">{display}</div>
-        <div>
-          <div className="calculator-grid">
-            <OperationButton
-              operation={<PiIcon />}
-              onClick={() => {
-                setCache([display, "pi"]);
-                setDisplay(Math.PI);
-              }}
-            />
-            <OperationButton
-              operation="e"
-              onClick={() => {
-                setCache([display, "e"]);
-                setDisplay(Math.E);
-              }}
-            />
-            <OperationButton
-              operation="log"
-              onClick={() => {
-                setCache([display, "log"]);
-                setDisplay(Math.log(display));
-              }}
-            />
-            <OperationButton
-              operation={<ExponentIcon />}
-              onClick={() => {
-                setCache([display, "exp"]);
-                setDisplay(0);
-              }}
-            />
-            <OperationButton
-              operation={<SquareRootIcon />}
-              onClick={() => {
-                setCache([]);
-                setDisplay(display ** 0.5);
-              }}
-            />
-            <OperationButton
-              operation={<PlusIcon />}
-              onClick={() => {
-                setCache([display, "+"]);
-                setDisplay(0);
-              }}
-            />
-            <OperationButton
-              operation={<MinusIcon />}
-              onClick={() => {
-                setCache([display, "-"]);
-                setDisplay(0);
-              }}
-            />
-            <OperationButton
-              operation={<CloseIcon />}
-              onClick={() => {
-                setCache([display, "*"]);
-                setDisplay(0);
-              }}
-            />
-            <OperationButton
-              operation={<DivisionIcon />}
-              onClick={() => {
-                setCache([display, "/"]);
-                setDisplay(0);
-              }}
-            />
-            <NumberButton
-              value={7}
-              onClick={() => setDisplay(display * 10 + 7)}
-            />
-            <NumberButton
-              value={8}
-              onClick={() => setDisplay(display * 10 + 8)}
-            />
-            <NumberButton
-              value={9}
-              onClick={() => setDisplay(display * 10 + 9)}
-            />
-            <NumberButton
-              value={4}
-              onClick={() => setDisplay(display * 10 + 4)}
-            />
-            <NumberButton
-              value={5}
-              onClick={() => setDisplay(display * 10 + 5)}
-            />
-            <NumberButton
-              value={6}
-              onClick={() => setDisplay(display * 10 + 6)}
-            />
-            <NumberButton
-              value={1}
-              onClick={() => setDisplay(display * 10 + 1)}
-            />
-            <NumberButton
-              value={2}
-              onClick={() => setDisplay(display * 10 + 2)}
-            />
-            <NumberButton
-              value={3}
-              onClick={() => setDisplay(display * 10 + 3)}
-            />
-            <NumberButton
-              value={0}
-              onClick={() => setDisplay(display * 10 + 0)}
-            />
+        <div className="calculator-container">
+          <div className="display">{display}</div>
+          <div>
+            <div className="calculator-grid">
+              <OperationButton
+                operation={<PiIcon />}
+                onClick={() => {
+                  setCache([display, "pi"]);
+                  setDisplay(Math.PI);
+                }}
+              />
+              <OperationButton
+                operation="e"
+                onClick={() => {
+                  setCache([display, "e"]);
+                  setDisplay(Math.E);
+                }}
+              />
+              <OperationButton
+                operation="log"
+                onClick={() => {
+                  setCache([display, "log"]);
+                  setDisplay(Math.log(display));
+                }}
+              />
+              <OperationButton
+                operation={<ExponentIcon />}
+                onClick={() => {
+                  setCache([display, "exp"]);
+                  setDisplay(0);
+                }}
+              />
+              <OperationButton
+                operation={<SquareRootIcon />}
+                onClick={() => {
+                  setCache([]);
+                  setDisplay(display ** 0.5);
+                }}
+              />
+              <OperationButton
+                operation={<PlusIcon />}
+                onClick={() => {
+                  setCache([display, "+"]);
+                  setDisplay(0);
+                }}
+              />
+              <OperationButton
+                operation={<MinusIcon />}
+                onClick={() => {
+                  setCache([display, "-"]);
+                  setDisplay(0);
+                }}
+              />
+              <OperationButton
+                operation={<CloseIcon />}
+                onClick={() => {
+                  setCache([display, "*"]);
+                  setDisplay(0);
+                }}
+              />
+              <OperationButton
+                operation={<DivisionIcon />}
+                onClick={() => {
+                  setCache([display, "/"]);
+                  setDisplay(0);
+                }}
+              />
+              <NumberButton
+                value={7}
+                onClick={() => setDisplay(display * 10 + 7)}
+              />
+              <NumberButton
+                value={8}
+                onClick={() => setDisplay(display * 10 + 8)}
+              />
+              <NumberButton
+                value={9}
+                onClick={() => setDisplay(display * 10 + 9)}
+              />
+              <NumberButton
+                value={4}
+                onClick={() => setDisplay(display * 10 + 4)}
+              />
+              <NumberButton
+                value={5}
+                onClick={() => setDisplay(display * 10 + 5)}
+              />
+              <NumberButton
+                value={6}
+                onClick={() => setDisplay(display * 10 + 6)}
+              />
+              <NumberButton
+                value={1}
+                onClick={() => setDisplay(display * 10 + 1)}
+              />
+              <NumberButton
+                value={2}
+                onClick={() => setDisplay(display * 10 + 2)}
+              />
+              <NumberButton
+                value={3}
+                onClick={() => setDisplay(display * 10 + 3)}
+              />
+              <NumberButton
+                value={0}
+                onClick={() => setDisplay(display * 10 + 0)}
+              />
 
-            <ClearButton
-              onClick={() => {
-                setDisplay(0);
-                setCache([]);
-              }}
-            />
-            <OperationButton operation="=" onClick={() => calculate()} />
+              <ClearButton
+                onClick={() => {
+                  setDisplay(0);
+                  setCache([]);
+                }}
+              />
+              <OperationButton operation="=" onClick={() => calculate()} />
+            </div>
           </div>
         </div>
       </div>
