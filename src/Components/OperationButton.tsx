@@ -2,7 +2,7 @@ const OperationButton = ({
   operation,
   onClick,
 }: {
-  operation: "+" | "-" | "*" | "/" | "=" | "exp" | "sqrt";
+  operation: "+" | "-" | "*" | "/" | "=" | "exp" | "sqrt" | "log_10" | "ln";
   onClick: () => void;
 }) => {
   return <button onClick={onClick}>{operation}</button>;

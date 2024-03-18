@@ -41,8 +41,20 @@ function App() {
         <div>
           {cache}
           <div className="calculator-grid">
-            <BlankButton />
-            <BlankButton />
+            <OperationButton
+              operation="ln"
+              onClick={() => {
+                setCache([display, "ln"]);
+                setDisplay(Math.log(display));
+              }}
+            />
+            <OperationButton
+              operation="log_10"
+              onClick={() => {
+                setCache([display, "log_10"]);
+                setDisplay(Math.log10(display));
+              }}
+            />
             <OperationButton
               operation="exp"
               onClick={() => {
