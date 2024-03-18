@@ -1,0 +1,55 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh; /* Center the calculator vertically */
+  flex-direction: column;
+  background-color: #f8f9fa; /* Light background for the app */
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4-column layout for buttons */
+  grid-gap: 15px; /* Increase space between buttons */
+  width: auto; /* Adjust width as per content */
+  padding: 30px;
+  background: #1c1c1c; /* Darker shade for contrast */
+  border-radius: 20px; /* More pronounced rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* Add some shadow for depth */
+}
+
+button {
+  font-size: 1.5rem; /* Larger text for readability */
+  padding: 20px; /* More space inside buttons */
+  border: none;
+  border-radius: 10px; /* Slightly rounded corners for buttons */
+  background: #f4f4f4; /* Light background for buttons */
+  color: #333; /* Dark text for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.2s, transform 0.1s; /* Smoother transitions */
+}
+
+button:hover {
+  background-color: #e2e2e2; /* Slightly darker on hover for feedback */
+  transform: scale(1.05); /* Slight increase in size on hover */
+}
+
+button:active {
+  background-color: #d0d0d0; /* Even darker when active */
+  transform: scale(1); /* Return to normal size when pressed */
+}
+
+.display {
+  color: #fff;
+  background: #2c2c2c; /* Slightly lighter than calculator for contrast */
+  font-size: 2.5rem; /* Larger font size for display */
+  text-align: right;
+  padding: 20px;
+  margin-bottom: 30px; /* More space above the buttons */
+  border-radius: 15px;
+  width: calc(100% - 60px); /* Adjust based on padding */
+  box-sizing: border-box;
+  min-height: 60px; /* Ensure display has height even if empty */
+  overflow: hidden; /* Keep content contained */
+}
