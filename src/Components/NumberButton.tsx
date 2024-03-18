@@ -5,7 +5,11 @@ const NumberButton = ({
   value: number;
   onClick: () => void;
 }) => {
-  return <button onClick={onClick}>{value}</button>;
+  return (
+    <button style={{ backgroundColor: "grey" }} onClick={onClick}>
+      {value}
+    </button>
+  );
 };
 
 export default NumberButton;

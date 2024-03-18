@@ -15,7 +15,16 @@ const OperationButton = ({
     | React.ReactNode;
   onClick: () => void;
 }) => {
-  return <button onClick={onClick}>{operation}</button>;
+  return operation !== "=" ? (
+    <button onClick={onClick}>{operation}</button>
+  ) : (
+    <button
+      style={{ backgroundColor: "#f4f4f4", color: "#333" }}
+      onClick={onClick}
+    >
+      {operation}
+    </button>
+  );
 };
 
 export default OperationButton;

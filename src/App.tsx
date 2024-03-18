@@ -10,6 +10,7 @@ import DivisionIcon from "mdi-react/DivisionIcon";
 import ExponentIcon from "mdi-react/ExponentIcon";
 import SquareRootIcon from "mdi-react/SquareRootIcon";
 import PiIcon from "mdi-react/PiIcon";
+import NthRootIcon from "./Components/NthRootIcon";
 // import { BlankButton } from "./Components/BlankButton";
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
         setDisplay(cache[0] ** display);
       } else if (cache[1] === "sqrt") {
         setDisplay(cache[0] ** 0.5);
+      } else if (cache[1] === "nthroot") {
+        setDisplay(cache[0] ** (1 / display));
       }
       setCache([]);
     }
@@ -49,17 +52,34 @@ function App() {
           <div>
             <div className="calculator-grid">
               <OperationButton
+                operation={<NthRootIcon />}
+                onClick={() => {
+                  setCache([display, "nthroot"]);
+                  setDisplay(0);
+                }}
+              />
+              <OperationButton
+                operation="."
+                onClick={() => {
+                  setDisplay(display * -1);
+                }}
+              />
+              <OperationButton
+                operation="+/-"
+                onClick={() => {
+                  setDisplay(display * -1);
+                }}
+              />
+              <OperationButton
                 operation={<PiIcon />}
                 onClick={() => {
-                  setCache([display, "pi"]);
-                  setDisplay(Math.PI);
+                  setDisplay(display * 10 + Math.PI);
                 }}
               />
               <OperationButton
                 operation="e"
                 onClick={() => {
-                  setCache([display, "e"]);
-                  setDisplay(Math.E);
+                  setDisplay(display * 10 + Math.E);
                 }}
               />
               <OperationButton
@@ -151,7 +171,6 @@ function App() {
                 value={0}
                 onClick={() => setDisplay(display * 10 + 0)}
               />
-
               <ClearButton
                 onClick={() => {
                   setDisplay(0);
