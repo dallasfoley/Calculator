@@ -7,6 +7,7 @@ import BlankButton from "./Components/BlankButton";
 
 function App() {
   const [display, setDisplay] = useState(0);
+
   const [cache, setCache] = useState<[number, string] | []>([]);
 
   const calculate = () => {
