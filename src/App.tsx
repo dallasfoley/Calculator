@@ -3,11 +3,17 @@ import "./App.css";
 import NumberButton from "./Components/NumberButton";
 import ClearButton from "./Components/ClearButton";
 import OperationButton from "./Components/OperationButton";
-import BlankButton from "./Components/BlankButton";
+import PlusIcon from "mdi-react/PlusIcon";
+import MinusIcon from "mdi-react/MinusIcon";
+import CloseIcon from "mdi-react/CloseIcon";
+import DivisionIcon from "mdi-react/DivisionIcon";
+import ExponentIcon from "mdi-react/ExponentIcon";
+import SquareRootIcon from "mdi-react/SquareRootIcon";
+import PiIcon from "mdi-react/PiIcon";
+// import { BlankButton } from "./Components/BlankButton";
 
 function App() {
   const [display, setDisplay] = useState(0);
-
   const [cache, setCache] = useState<[number, string] | []>([]);
 
   const calculate = () => {
@@ -43,56 +49,56 @@ function App() {
           {cache}
           <div className="calculator-grid">
             <OperationButton
-              operation="ln"
+              operation="log"
               onClick={() => {
-                setCache([display, "ln"]);
+                setCache([display, "log"]);
                 setDisplay(Math.log(display));
               }}
             />
             <OperationButton
-              operation="log_10"
+              operation={<PiIcon />}
               onClick={() => {
-                setCache([display, "log_10"]);
-                setDisplay(Math.log10(display));
+                setCache([display, "pi"]);
+                setDisplay(Math.PI);
               }}
             />
             <OperationButton
-              operation="exp"
+              operation={<ExponentIcon />}
               onClick={() => {
                 setCache([display, "exp"]);
                 setDisplay(0);
               }}
             />
             <OperationButton
-              operation="sqrt"
+              operation={<SquareRootIcon />}
               onClick={() => {
                 setCache([]);
                 setDisplay(display ** 0.5);
               }}
             />
             <OperationButton
-              operation="+"
+              operation={<PlusIcon />}
               onClick={() => {
                 setCache([display, "+"]);
                 setDisplay(0);
               }}
             />
             <OperationButton
-              operation="-"
+              operation={<MinusIcon />}
               onClick={() => {
                 setCache([display, "-"]);
                 setDisplay(0);
               }}
             />
             <OperationButton
-              operation="*"
+              operation={<CloseIcon />}
               onClick={() => {
                 setCache([display, "*"]);
                 setDisplay(0);
               }}
             />
             <OperationButton
-              operation="/"
+              operation={<DivisionIcon />}
               onClick={() => {
                 setCache([display, "/"]);
                 setDisplay(0);
